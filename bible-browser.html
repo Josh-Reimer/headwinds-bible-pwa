@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Headwind Bible</title>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="index.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
   <header class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-green-600">MyVerse</h1>
+      <h1 class="text-2xl font-bold text-green-600">MyVerse Browser</h1>
       <nav class="space-x-4">
-        <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
         <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-        <a href="#" class="text-gray-700 hover:text-blue-600">Browse</a>
+        <a href="bible-browser.html" class="text-gray-700 hover:text-blue-600">Browse</a>
       </nav>
     </div>
   </header>
   
  
-    <script src="index.js"></script>
-    <div id="tile-container" class="w-full flex flex-col items-center" onload="setBibleText();">
+    <div id="tile-container" class="w-full flex flex-col items-center">
       <!-- Tiles will be added here -->
     </div>
   </section>
