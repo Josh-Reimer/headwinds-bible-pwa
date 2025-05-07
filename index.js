@@ -1,3 +1,26 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+  var chapter_text = [];
+
+  fetch('https://bible.helloao.org/api/eng_kjv/MAT/5.json')
+  .then(request => request.json())
+  .then(chapter => {
+      //console.log('genesis 1 kjv',chapter);
+      //console.log(chapter.chapter.content[0].content);
+      
+      for(let chap of chapter.chapter.content){
+          //console.log(chap.content);
+          chapter_text.push(chap.content[0]);
+          
+      }
+      document.getElementById("verse-to-show").innerHTML = chapter_text[6].text;
+      
+  })
+
+  
+    
+  
+});
 //get the list of books for the kjv translation
 /*
 fetch('https://bible.helloao.org/api/eng_kjv/books.json')
@@ -10,28 +33,6 @@ fetch('https://bible.helloao.org/api/eng_kjv/books.json')
         }
     })
 */
-const verse_view = document.getElementById("verse-to-show");
-const bible_browser = document.getElementById("tile-container");
-let chapter_text = [];
-
-fetch('https://bible.helloao.org/api/eng_kjv/MAT/5.json')
-    .then(request => request.json())
-    .then(chapter => {
-        //console.log('genesis 1 kjv',chapter);
-        console.log(chapter.chapter.content[0].content);
-        verse_view.innerText = chapter.chapter.content[0].content;
-        
-        for(let chap of chapter.chapter.content){
-            console.log(chap.content);
-            chapter_text.push(chap.content);
-            
-        }
-        
-    })
-
-function setBibleText(){
-  bible_browser.innerText = chapter_text[0];
-}
 
 
 /*      other langugages besides english        */
